@@ -1,0 +1,60 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+            <h1>
+                List Of Categories
+            </h1>
+        </div>
+	</div>
+
+<div class = 'flash'>
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+</div>
+	
+	<div class="row padding-top padding-bottom">
+		<div></div>
+		<div class="col-md-10 padding-none">
+            <a href="{{url_for('newCategory')}}">
+                <button class="btn btn-default" id="new-category">
+                    Add Category
+                </button>
+            </a>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    {% for c in category %}
+        <a href = "{{url_for('showItem', category_id = c.id)}}">
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div>
+						<h3>{{c.name}}</h3>
+					</div>
+				<div class="col-md-1"></div>
+			</div>
+		</a>
+                <p>
+                    <a href="{{url_for('editCategory',category_id=c.id)}}">Edit</a>
+                </p>
+                <p>
+                    <a href="{{url_for('deleteCategory',category_id=c.id)}}">Delete</a>
+                </p>
+                <br>
+
+    {% endfor %}
+{% endblock %}
