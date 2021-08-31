@@ -1,4 +1,4 @@
-## Item Catalog
+# Item Catalog
 
 How do I run this?
 1. Setup: Configure VM & Database
@@ -8,24 +8,24 @@ I used version 2.2.4 of Vagrant.
 
 Step 2: Once you've cloned this project from https://github.com/udacity/fullstack-nanodegree-vm, open the terminal and then run the following commands:
 
-# Install & Configure VM
+## Install & Configure VM
 cd /path/to/vagrant
 vagrant up
 
-# Log into machine
+## Log into machine
 vagrant ssh
 
-# Log out of machine
-# <Ctrl + D>
+## Log out of machine
+## <Ctrl + D>
 
-# Destroy machine once done
+## Destroy machine once done
 vagrant destroy
 
 2. Run the website
 Open the terminal. Then, run the following commands:
 
-# Open shared folder
+## Open shared folder
 cd /vagrant/catalog 
 
-# Run the program
+## Run the program
 python catalogApp.py
